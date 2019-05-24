@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">OTMail</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="/About">About</a></li>
+      <li><a href="/Contact">Contact</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>One Tap Mail</h3>
+  <p>This Website helps in sending mail to the recipient without opening gmail and clicking on compose button.</p>
+    <hr>
+    <form action='/Send' method='POST'>
+        {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1" name="email_value" placeholder="Enter email" type="email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+    <div class="form-group">
+    <label for="message">Enter message</label>
+    <input aria-describedby="message" class="form-control" id="message" name="msgname" placeholder="Enter your message" type="text">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</body>
+</html>
